@@ -11,7 +11,6 @@ Domain Path: /languages/
 Tags: black, gray, red, white, one-column, two-columns, right-sidebar,fixed-layout,light,front-page-post-form,full-width-template,rtl-language-support,sticky-post,theme-options,responsive-layout, custom-background, custom-menu, editor-style, featured-images, threaded-comments, translation-ready, photoblogging, accessibility-ready
 */
 
-
 /*--------------------------------------------------------------
 1.0 - Reset
 --------------------------------------------------------------*/
@@ -2107,6 +2106,10 @@ width: -webkit-calc(100% / 4);
 	height: 1px;
 }
 
+.zerif_hidden_if_not_customizer {
+	display: none !important;
+}
+
 /* media queries:  change number of items per row */
 @media screen and (max-width: 1190px) {
 	.cbp-rfgrid li {
@@ -2171,12 +2174,11 @@ width: -webkit-calc(100% / 4);
 	border-radius: 5px;
 }
 /*---------------------------------------
- **   Section: Abot us;              -----
+ **   Section: About us;              -----
 -----------------------------------------*/
 .about-us {
 	background: #272727;
 	color: #FFF;
-	padding-bottom: 100px;
 }
 .about-us .row {
 	margin-left: -15px;
@@ -2200,6 +2202,10 @@ width: -webkit-calc(100% / 4);
 }
 .about-us .column {
 	margin-bottom: 78px;
+}
+.about-us .col-md-12.zerif-rtl-big-title .big-intro,
+.about-us .col-md-12.zerif_about_us_center p {
+	text-align: center;
 }
 /*--SKILLS --*/
 .skills {
@@ -2260,7 +2266,9 @@ width: -webkit-calc(100% / 4);
 }
 .client-list {
 	padding-top: 5px;
-	margin-bottom: -17px;
+	float: left;
+    width: 100%;
+    margin-bottom: 78px;
 }
 .client-list ul{
 	margin: 0;
@@ -3407,7 +3415,6 @@ article .posted-on a:hover{
 .woocommerce-page .products .product > a:first-child {
 	position: relative;
 	text-align: center;
-/*	min-height: 385px; */
 	display: block;
 }
 .woocommerce-page .products a.button {
@@ -5609,6 +5616,10 @@ p.edd-alert-error,
   	.edd_download a.edd-add-to-cart.button.red.edd-submit.edd-has-js span {
   		font-size: 12px;
   	}
+	.zerif_about_us_center p,
+	.about-us .col-md-6.zerif_about_us_center.text_and_skills p {
+		text-align: center;
+	}
 }
 
 @media (max-width: 768px) {
@@ -5724,18 +5735,11 @@ body.custom-background {
 	}
 
       /* FOOTER */
-	footer {
+	.container .company-details {
 		padding-top: 40px;
+		width: 33%;
 	}
-	.company-details {
-		padding-top: 0;
-		padding-bottom: 33px;
-	}
-	.copyright {
-		width: 100%;
-		padding-top: 33px;
-		padding-bottom: 33px;
-	}
+
 }
 
 @media (max-width: 992px) {
@@ -5771,6 +5775,25 @@ body.custom-background {
     .header-content-wrap{
 		padding: 225px 0 150px;
 	}
+	.about-us .big-intro {
+		text-align: center;
+	}
+	.company-details {
+		padding-top: 0;
+		padding-bottom: 33px;
+	}
+	.container .company-details:first-child {
+		padding-top: 40px;
+	}
+	.copyright {
+		width: 100%;
+		padding-top: 33px;
+		padding-bottom: 33px;
+	}
+	.container .company-details {
+		width: 100%;
+	}
+
 
 }
 @media (max-width: 767px) {
@@ -5940,9 +5963,6 @@ body.custom-background {
 	}
 
       /* FOOTER */
-	footer {
-		padding-top: 40px;
-	}
 	.company-details {
 		padding-top: 0;
 		padding-bottom: 33px;
